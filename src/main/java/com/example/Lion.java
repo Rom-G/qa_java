@@ -8,9 +8,9 @@ public class Lion {
     FelineBehaviour felineBehaviour;
     boolean hasMane;
 
-    public Lion(Feline feline, FelineBehaviour felineBehaviour, String sex) throws Exception {
+    public Lion(Feline feline, String sex) throws Exception {
         this.predator = feline;
-        this.felineBehaviour = felineBehaviour;
+        this.felineBehaviour = feline;
 
         if ("Самец".equals(sex)) {
             hasMane = true;

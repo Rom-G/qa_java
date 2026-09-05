@@ -15,12 +15,15 @@ public class Feline extends Animal implements Predator, FelineBehaviour {
     }
 
     @Override
-    public int getKittens() {
+    public int getKittens() throws Exception {
         return getKittens(1);
     }
 
     @Override
-    public int getKittens(int kittensCount) {
+    public int getKittens(int kittensCount) throws Exception {
+        if (kittensCount < 0) {
+            throw new Exception("Количество котят не может быть отрицательным");
+        }
         return kittensCount;
     }
 
