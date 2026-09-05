@@ -15,7 +15,7 @@ import static org.junit.Assert.assertThrows;
 public class FelineTest {
 
     @Spy
-    Feline feline;
+    private Feline feline;
 
     @Test
     public void eatMeatReturnsMockedFood() throws Exception {
