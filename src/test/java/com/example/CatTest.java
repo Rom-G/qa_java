@@ -35,6 +35,7 @@ public class CatTest {
         Mockito.when(feline.eatMeat()).thenReturn(expectedFood);
 
         assertEquals(expectedFood, cat.getFood());
+        Mockito.verify(feline).eatMeat();
     }
 
 }

@@ -20,30 +20,23 @@ public class FelineTest {
     @Test
     public void eatMeatReturnsMockedFood() throws Exception {
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-        List<String> result = feline.eatMeat();
 
-        assertEquals(List.of("Животные", "Птицы", "Рыба"), result);
+        assertEquals(List.of("Животные", "Птицы", "Рыба"), feline.eatMeat());
     }
 
     @Test
     public void getFamilyReturnsFelineFamily() {
-        String actualFamily = feline.getFamily();
-
-        assertEquals("Кошачьи", actualFamily);
+        assertEquals("Кошачьи", feline.getFamily());
     }
 
     @Test
-    public void getKittensNoArgInvokeGetKittensWith1() throws Exception {
-        feline.getKittens();
-
-        Mockito.verify(feline, Mockito.times(1)).getKittens(1);
+    public void getKittensNoArgReturnsOne() throws Exception {
+        assertEquals(1, feline.getKittens());
     }
 
     @Test
     public void getKittensWithArgReturnsCount() throws Exception {
-        int actualCount = feline.getKittens(3);
-
-        assertEquals(3, actualCount);
+        assertEquals(3, feline.getKittens(3));
     }
 
     @Test

@@ -44,6 +44,7 @@ public class LionTest {
         Mockito.when(feline.getKittens()).thenReturn(1);
 
         assertEquals(expectedNumberOfKittens, lion.getKittens());
+        Mockito.verify(feline).getKittens();
     }
 
     @Test
@@ -52,5 +53,6 @@ public class LionTest {
         Mockito.when(feline.eatMeat()).thenReturn(expectedFood);
 
         assertEquals(expectedFood, lion.getFood());
+        Mockito.verify(feline).eatMeat();
     }
 }
